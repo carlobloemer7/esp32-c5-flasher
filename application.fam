@@ -1,0 +1,18 @@
+# For details & more options, see documentation/AppManifests.md in the firmware repo
+
+App(
+    appid="esp32_c5_flasher",
+    name="ESP32-C5 Flasher",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="esp32_c5_flasher_app",
+    stack_size=4 * 1024,
+    fap_category="GPIO",
+    fap_version="0.1",
+    fap_icon="icon.png",
+    fap_description="Flash ESP32-C5 (WROOM-1U) boards over UART via the GPIO header",
+    fap_author="carlobloemer7",
+    # Bundles resources/ into the .fap itself (as a .fapassets ELF section);
+    # the OS auto-extracts it to /ext/apps_assets/esp32_c5_flasher/ on first
+    # launch (and re-syncs if the bundled contents change), no app code needed.
+    fap_file_assets="resources",
+)
